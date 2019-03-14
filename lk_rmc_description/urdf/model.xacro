@@ -1,13 +1,11 @@
 <robot
   name="sirdigsalot">
-
-  <!-- <link name="world"/> -->
-
-  <!-- <joint name="fixed" type="fixed">
-    <parent link="world"/>
+  <link name="base_footprint"/>
+  <joint name="base_joint" type="fixed">
+    <parent link = "base_footprint"/>
     <child link="base_link"/>
-  </joint> -->
-
+    <origin xyz="0.0 0.0 0.5" rpy="0 0 0 "/>
+  </joint>
   <link
     name="base_link">
     <inertial>
@@ -15,13 +13,13 @@
         xyz="0.0063713 -0.11708 0.0018811"
         rpy="0 0 0" />
       <mass
-        value="12.883" />
+        value="2.0" />
       <inertia
         ixx="0.27816"
         ixy="-0.020687"
-        ixz="1.9963E-05"
+        ixz="0"
         iyy="0.59209"
-        iyz="3.0096E-05"
+        iyz="0"
         izz="0.60601" />
     </inertial>
     <visual>
@@ -55,7 +53,7 @@
         xyz="0 0 -0.0508"
         rpy="0 0 0" />
       <mass
-        value="7.4005" />
+        value="1.0" />
       <inertia
         ixx="0"
         ixy="0"
@@ -70,8 +68,6 @@
         rpy="0 0 0" />
       <geometry>
           <cylinder length=".1016" radius=".1524"/>
-        <!-- <mesh
-          filename="package://lk_rmc_description/meshes/frontLeftWheel.STL" /> -->
       </geometry>
       <material
         name="">
@@ -84,8 +80,6 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <!-- <mesh
-          filename="package://lk_rmc_description/meshes/frontLeftWheel.STL" /> -->
         <cylinder length=".1016" radius=".1524"/>
       </geometry>
     </collision>
@@ -110,7 +104,7 @@
         xyz="-1.6653E-16 -1.9602E-16 -0.0508"
         rpy="0 0 0" />
       <mass
-        value="7.4005" />
+        value="1.0" />
       <inertia
         ixx="0"
         ixy="0"
@@ -124,9 +118,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <!-- <mesh
-          filename="package://lk_rmc_description/meshes/backLeftWheel.STL" /> -->
-                  <cylinder length=".1016" radius=".1524"/>
+        <cylinder length=".1016" radius=".1524"/>
       </geometry>
       <material
         name="">
@@ -139,9 +131,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <!-- <mesh
-          filename="package://lk_rmc_description/meshes/backLeftWheel.STL" /> -->
-                  <cylinder length=".1016" radius=".1524"/>
+        <cylinder length=".1016" radius=".1524"/>
       </geometry>
     </collision>
   </link>
@@ -167,7 +157,7 @@
         xyz="0 0 0.0508"
         rpy="0 0 0" />
       <mass
-        value="7.4005" />
+        value="1.0" />
       <inertia
         ixx="0"
         ixy="0"
@@ -181,9 +171,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <!-- <mesh
-          filename="package://lk_rmc_description/meshes/frontRightWheel.STL" /> -->
-                  <cylinder length=".1016" radius=".1524"/>
+        <cylinder length=".1016" radius=".1524"/>
       </geometry>
       <material
         name="">
@@ -196,9 +184,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <!-- <mesh
-          filename="package://lk_rmc_description/meshes/frontRightWheel.STL" /> -->
-                  <cylinder length=".1016" radius=".1524"/>
+        <cylinder length=".1016" radius=".1524"/>
       </geometry>
     </collision>
   </link>
@@ -215,48 +201,6 @@
     <axis
       xyz="0 0 1" />
   </joint>
-  <link
-    name="backRightWheel">
-    <inertial>
-      <origin
-        xyz="5.55111512312578E-17 0 0.0508"
-        rpy="0 0 0" />
-      <mass
-        value="7.40046273221895" />
-      <inertia
-        ixx="0"
-        ixy="0"
-        ixz="0"
-        iyy="0"
-        iyz="0"
-        izz="0" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <!-- <mesh
-          filename="package://lk_rmc_description/meshes/backRightWheel.STL" /> -->
-                  <cylinder length=".1016" radius=".1524"/>
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <!-- <mesh
-          filename="package://lk_rmc_description/meshes/backRightWheel.STL" /> -->
-                  <cylinder length=".1016" radius=".1524"/>
-      </geometry>
-    </collision>
-  </link>
   <joint
     name="backRightWheelRotate"
     type="continuous">
@@ -270,14 +214,14 @@
     <axis
       xyz="0 0 1" />
   </joint>
-  <!-- <link
-    name="depRightActuator">
+  <link
+    name="backRightWheel">
     <inertial>
       <origin
-        xyz="-4.2562E-09 -0.020725 3.5813E-09"
+        xyz="0 0 0.0"
         rpy="0 0 0" />
       <mass
-        value="0.088669" />
+        value="1.0" />
       <inertia
         ixx="0"
         ixy="0"
@@ -291,13 +235,12 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://lk_rmc_description/meshes/depRightActuator.STL" />
+        <cylinder length=".1016" radius=".1524"/>
       </geometry>
       <material
         name="">
         <color
-          rgba="0.79216 0.81961 0.93333 1" />
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
     <collision>
@@ -305,299 +248,59 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://lk_rmc_description/meshes/depRightActuator.STL" />
-      </geometry>
-    </collision>
-  </link> -->
-  <!-- <joint
-    name="depRightExtend"
-    type="prismatic">
-    <origin
-      xyz="-0.11281 -0.18528 0"
-      rpy="-1.5708 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="depRightActuator" />
-    <axis
-      xyz="0 -1 0" />
-    <limit
-      effort="0"
-      velocity="0" />
-  </joint>
-  <link
-    name="depConveyor">
-    <inertial>
-      <origin
-        xyz="0.28997 -6.0219E-05 0.15395"
-        rpy="0 0 0" />
-      <mass
-        value="22.501" />
-      <inertia
-        ixx="0.039859"
-        ixy="6.0953E-06"
-        ixz="0.047728"
-        iyy="0.097009"
-        iyz="-5.0904E-06"
-        izz="0.05715" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://lk_rmc_description/meshes/depConveyor.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://lk_rmc_description/meshes/depConveyor.STL" />
+        <cylinder length=".1016" radius=".1524"/>
       </geometry>
     </collision>
   </link>
-  <joint
-    name="depConveyorRotate"
-    type="fixed">
-    <origin
-      xyz="-0.36547 -0.16157 0.32661"
-      rpy="3.1416 0 0.48826" />
-    <parent
-      link="depRightActuator" />
-    <child
-      link="depConveyor" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="depLeftActuator">
-    <inertial>
-      <origin
-        xyz="-4.2562E-09 -0.020725 3.5813E-09"
-        rpy="0 0 0" />
-      <mass
-        value="0.088669" />
-      <inertia
-        ixx="0"
-        ixy="0"
-        ixz="0"
-        iyy="0"
-        iyz="0"
-        izz="0" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://lk_rmc_description/meshes/depLeftActuator.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://lk_rmc_description/meshes/depLeftActuator.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="depLeftExtend"
-    type="prismatic">
-    <origin
-      xyz="-0.11281 0.1815 0"
-      rpy="-1.5708 6.3639E-19 3.1312" />
-    <parent
-      link="base_link" />
-    <child
-      link="depLeftActuator" />
-    <axis
-      xyz="0 -1 0" />
-    <limit
-      effort="0"
-      velocity="0" />
-  </joint>
-  <link
-    name="cameraActuator">
-    <inertial>
-      <origin
-        xyz="-2.73470979195167E-09 0.124252406834887 -1.03760512334961E-09"
-        rpy="0 0 0" />
-      <mass
-        value="0.210658735046211" />
-      <inertia
-        ixx="0"
-        ixy="0"
-        ixz="0"
-        iyy="0"
-        iyz="0"
-        izz="0" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://lk_rmc_description/meshes/cameraActuator.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://lk_rmc_description/meshes/cameraActuator.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="cameraExtend"
-    type="prismatic">
-    <origin
-      xyz="0.41957 -0.0018055 0.0051623"
-      rpy="1.5708 -3.9284E-18 -0.064201" />
-    <parent
-      link="base_link" />
-    <child
-      link="cameraActuator" />
-    <axis
-      xyz="0 1 0" />
-    <limit
-      effort="0"
-      velocity="0" />
-  </joint>
-  <link
-    name="intakeConveyor">
-    <inertial>
-      <origin
-        xyz="-3.0286E-08 -0.0087509 0.085493"
-        rpy="0 0 0" />
-      <mass
-        value="31.448" />
-      <inertia
-        ixx="0"
-        ixy="0"
-        ixz="0"
-        iyy="0"
-        iyz="0"
-        izz="0" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://lk_rmc_description/meshes/intakeConveyor.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://lk_rmc_description/meshes/intakeConveyor.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="intakeExtend"
-    type="prismatic">
-    <origin
-      xyz="0.25271 0.083601 0"
-      rpy="1.5708 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="intakeConveyor" />
-    <axis
-      xyz="0 1 0" />
-    <limit
-      lower="-0.54571"
-      upper="0"
-      effort="0"
-      velocity="0" />
-  </joint> -->
-    <gazebo>
+  <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/sirdigsalot</robotNamespace>
-      <!-- <robotParam>/robot_description</robotParam> -->
+      <robotNamespace></robotNamespace>
+      <!--robotParam>/robot_description</robotParam-->
       <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
-
     </plugin>
   </gazebo>
-		<transmission name="backLeftWheelTrans" type="SimpleTransmission">
-			<type>transmission_interface/SimpleTransmission</type>
-			<actuator name="backLeftWheelMotor">
-				<mechanicalReduction>1</mechanicalReduction>
-        <hardwareInterface>VelocityJointInterface</hardwareInterface>
-			</actuator>
-			<joint name="backLeftWheelRotate">
-				<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-			</joint>
-		</transmission>
+  <transmission name="backLeftWheelTrans" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="backLeftWheelMotor">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="backLeftWheelRotate">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+  
+  <transmission name="frontLeftWheelTrans" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="frontLeftWheelMotor">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="frontLeftWheelRotate">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
 
-		<transmission name="frontLeftWheelTrans" type="SimpleTransmission">
-			<type>transmission_interface/SimpleTransmission</type>
-			<actuator name="frontLeftWheelMotor">
-				<mechanicalReduction>1</mechanicalReduction>
-        <hardwareInterface>VelocityJointInterface</hardwareInterface>
-			</actuator>
-			<joint name="frontLeftWheelRotate">
-				<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-			</joint>
-		</transmission>
+  <transmission name="backRightWheelTrans" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="backRightWheelMotor">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="backRightWheelRotate">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
 
-		<transmission name="backRightWheelTrans" type="SimpleTransmission">
-			<type>transmission_interface/SimpleTransmission</type>
-			<actuator name="backRightWheelMotor">
-				<mechanicalReduction>1</mechanicalReduction>
-        <hardwareInterface>VelocityJointInterface</hardwareInterface>
-			</actuator>
-			<joint name="backRightWheelRotate">
-				<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-			</joint>
-		</transmission>
+  <transmission name="frontRightWheelTrans" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="frontRightWheelMotor">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </actuator>
+    <joint name="frontRightWheelRotate">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
 
-		<transmission name="frontRightWheelTrans" type="SimpleTransmission">
-			<type>transmission_interface/SimpleTransmission</type>
-			<actuator name="frontRightWheelMotor">
-				<mechanicalReduction>1</mechanicalReduction>
-        <hardwareInterface>VelocityJointInterface</hardwareInterface>
-			</actuator>
-			<joint name="frontRightWheelRotate">
-				<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-			</joint>
-		</transmission>
-		</robot>
+</robot>
