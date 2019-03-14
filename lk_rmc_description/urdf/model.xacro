@@ -30,7 +30,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lk_description/meshes/base_link.STL" />
+          filename="package://lk_rmc_description/meshes/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -44,7 +44,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lk_description/meshes/base_link.STL" />
+          filename="package://lk_rmc_description/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -71,7 +71,7 @@
       <geometry>
           <cylinder length=".1016" radius=".1524"/>
         <!-- <mesh
-          filename="package://lk_description/meshes/frontLeftWheel.STL" /> -->
+          filename="package://lk_rmc_description/meshes/frontLeftWheel.STL" /> -->
       </geometry>
       <material
         name="">
@@ -85,7 +85,7 @@
         rpy="0 0 0" />
       <geometry>
         <!-- <mesh
-          filename="package://lk_description/meshes/frontLeftWheel.STL" /> -->
+          filename="package://lk_rmc_description/meshes/frontLeftWheel.STL" /> -->
         <cylinder length=".1016" radius=".1524"/>
       </geometry>
     </collision>
@@ -125,7 +125,7 @@
         rpy="0 0 0" />
       <geometry>
         <!-- <mesh
-          filename="package://lk_description/meshes/backLeftWheel.STL" /> -->
+          filename="package://lk_rmc_description/meshes/backLeftWheel.STL" /> -->
                   <cylinder length=".1016" radius=".1524"/>
       </geometry>
       <material
@@ -140,7 +140,7 @@
         rpy="0 0 0" />
       <geometry>
         <!-- <mesh
-          filename="package://lk_description/meshes/backLeftWheel.STL" /> -->
+          filename="package://lk_rmc_description/meshes/backLeftWheel.STL" /> -->
                   <cylinder length=".1016" radius=".1524"/>
       </geometry>
     </collision>
@@ -182,7 +182,7 @@
         rpy="0 0 0" />
       <geometry>
         <!-- <mesh
-          filename="package://lk_description/meshes/frontRightWheel.STL" /> -->
+          filename="package://lk_rmc_description/meshes/frontRightWheel.STL" /> -->
                   <cylinder length=".1016" radius=".1524"/>
       </geometry>
       <material
@@ -197,7 +197,7 @@
         rpy="0 0 0" />
       <geometry>
         <!-- <mesh
-          filename="package://lk_description/meshes/frontRightWheel.STL" /> -->
+          filename="package://lk_rmc_description/meshes/frontRightWheel.STL" /> -->
                   <cylinder length=".1016" radius=".1524"/>
       </geometry>
     </collision>
@@ -237,7 +237,7 @@
         rpy="0 0 0" />
       <geometry>
         <!-- <mesh
-          filename="package://lk_description/meshes/backRightWheel.STL" /> -->
+          filename="package://lk_rmc_description/meshes/backRightWheel.STL" /> -->
                   <cylinder length=".1016" radius=".1524"/>
       </geometry>
       <material
@@ -252,7 +252,7 @@
         rpy="0 0 0" />
       <geometry>
         <!-- <mesh
-          filename="package://lk_description/meshes/backRightWheel.STL" /> -->
+          filename="package://lk_rmc_description/meshes/backRightWheel.STL" /> -->
                   <cylinder length=".1016" radius=".1524"/>
       </geometry>
     </collision>
@@ -292,7 +292,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lk_description/meshes/depRightActuator.STL" />
+          filename="package://lk_rmc_description/meshes/depRightActuator.STL" />
       </geometry>
       <material
         name="">
@@ -306,7 +306,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lk_description/meshes/depRightActuator.STL" />
+          filename="package://lk_rmc_description/meshes/depRightActuator.STL" />
       </geometry>
     </collision>
   </link> -->
@@ -348,7 +348,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lk_description/meshes/depConveyor.STL" />
+          filename="package://lk_rmc_description/meshes/depConveyor.STL" />
       </geometry>
       <material
         name="">
@@ -362,7 +362,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lk_description/meshes/depConveyor.STL" />
+          filename="package://lk_rmc_description/meshes/depConveyor.STL" />
       </geometry>
     </collision>
   </link>
@@ -401,7 +401,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lk_description/meshes/depLeftActuator.STL" />
+          filename="package://lk_rmc_description/meshes/depLeftActuator.STL" />
       </geometry>
       <material
         name="">
@@ -415,7 +415,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lk_description/meshes/depLeftActuator.STL" />
+          filename="package://lk_rmc_description/meshes/depLeftActuator.STL" />
       </geometry>
     </collision>
   </link>
@@ -457,7 +457,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lk_description/meshes/cameraActuator.STL" />
+          filename="package://lk_rmc_description/meshes/cameraActuator.STL" />
       </geometry>
       <material
         name="">
@@ -471,7 +471,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lk_description/meshes/cameraActuator.STL" />
+          filename="package://lk_rmc_description/meshes/cameraActuator.STL" />
       </geometry>
     </collision>
   </link>
@@ -513,7 +513,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lk_description/meshes/intakeConveyor.STL" />
+          filename="package://lk_rmc_description/meshes/intakeConveyor.STL" />
       </geometry>
       <material
         name="">
@@ -527,7 +527,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://lk_description/meshes/intakeConveyor.STL" />
+          filename="package://lk_rmc_description/meshes/intakeConveyor.STL" />
       </geometry>
     </collision>
   </link>
