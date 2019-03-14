@@ -55,6 +55,7 @@
   <exec_depend>lk_rmc_hardware</exec_depend>
   <exec_depend>lk_rmc_teleop</exec_depend>
   <exec_depend>lk_rmc_mc</exec_depend>
+  <exec_depend>lk_rmc_gazebo</exec_depend>
 
 
 
