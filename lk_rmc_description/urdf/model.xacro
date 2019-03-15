@@ -77,7 +77,7 @@
     type="continuous">
     <origin
       xyz="0.30464 0.23782 -0.28624"
-      rpy="1.5708 0.0022295 -1.3651E-19" />
+      rpy="-1.5708 0.0022295 0" />
     <parent
       link="base_link" />
     <child
@@ -122,7 +122,7 @@
     type="continuous">
     <origin
       xyz="-0.30496 0.23782 -0.28624"
-      rpy="1.5708 -0.71925 -3.6358E-15" />
+      rpy="-1.5708 -0.71925 0" />
     <parent
       link="base_link" />
     <child
@@ -167,7 +167,7 @@
     type="continuous">
     <origin
       xyz="0.30464 -0.2416 -0.28624"
-      rpy="1.5708 -0.055957 3.4299E-18" />
+      rpy="-1.5708 -0.055957 3.4299E-18" />
     <parent
       link="base_link" />
     <child
@@ -180,7 +180,7 @@
     type="continuous">
     <origin
       xyz="-0.30496 -0.2416 -0.28624"
-      rpy="1.5708 0 0" />
+      rpy="-1.5708 0 0" />
     <parent
       link="base_link" />
     <child
@@ -394,7 +394,7 @@
         </noise>
       </ray>
       <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_gpu_laser.so">
-        <topicName>/laser/scan</topicName>
+        <topicName>/scan</topicName>
         <frameName>laser_link</frameName>
       </plugin>
     </sensor>

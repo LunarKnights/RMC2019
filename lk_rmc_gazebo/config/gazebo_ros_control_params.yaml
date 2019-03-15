@@ -32,7 +32,7 @@ skid_steer_drive_controller:
   # Wheel separation and diameter. These are both optional.
   # diff_drive_controller will attempt to read either one or both from the
   # URDF if not specified as a parameter
-  wheel_separation : 1.0
+  wheel_separation : .57248
   wheel_radius : 0.15
   # Velocity and acceleration limits
   # Whenever a min_* is unspecified, default to -max_*
