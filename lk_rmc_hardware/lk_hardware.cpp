@@ -2,21 +2,22 @@
 #include <lk_rmc_hardware/Motor.h>
 
 #include "ctre/phoenix/platform/Platform.h"
+#include "ctre/phoenix/motorcontrol/ControlMode.h"
 // #include "ctre/Phoenix.h"
 
 #include <stdexcept>
 #include <string>
 #include <iostream>
 
-Robot::Robot(void)
+Robot::Robot(void) : motorReady{false}
 {
 	numMotors = 0;
 	baseReady = false;
 	depoReady = false;
 	intakeReady = false;
-	motorReady = {0};
 }
 
+// destructor clears dynamically allocated motors
 Robot::~Robot(void)
 {
 	for (Motor *m : motors)
@@ -29,17 +30,18 @@ int Robot::getNumMotors(void)
 	return numMotors;
 }
 
-Motor *Robot::getMotor(MotorType id)
+// returns a pointer to the specified motor
+Motor &Robot::getMotor(MotorInfo::MotorType id)
 {
 	if (motorReady[id])
-		for (auto i = motors.begin(); i != motors.end(); ++i)
-			if (i->info.id == id)
-				return *i;
+		for (Motor *m : motors)
+			if (m->getInfo().getType() == id)
+				return *m;
 
 	throw std::invalid_argument("Motor " + MotorInfo(id).typeToString() + " not found\n");
 }
 
-bool Robot::initMotor(MotorType id)
+bool Robot::initMotor(MotorInfo::MotorType id)
 {
 	if (!motorReady[id])
 	{
@@ -52,9 +54,11 @@ bool Robot::initMotor(MotorType id)
 	throw std::invalid_argument("Motor " + MotorInfo(id).typeToString() + " already set!\n");
 }
 
-// TODO: this
+// disables all motors, untested
 void Robot::stopAllMotors(void)
 {
+	for (Motor *m : motors)
+		m->Set(ctre::phoenix::motorcontrol::ControlMode::Disabled, 0.0);
 }
 
 void Robot::initBase(void)
@@ -62,8 +66,8 @@ void Robot::initBase(void)
 	if (baseReady)
 		return;
 
-	for (int i = BASE_FL; i <= BASE_BR; i++)
-		initMotor(i);
+	for (int i = MotorInfo::BASE_FL; i <= MotorInfo::BASE_BR; i++)
+		initMotor(static_cast<MotorInfo::MotorType>(i));
 
 	baseReady = true;
 }
@@ -73,7 +77,7 @@ void Robot::initDepo(void)
 	if (depoReady)
 		return;
 
-	initMotor(DEPO);
+	initMotor(MotorInfo::DEPO);
 	depoReady = true;
 }
 
@@ -82,15 +86,18 @@ void Robot::initIntake(void)
 	if (intakeReady)
 		return;
 
-	for (int i = INTK_DRV; i <= INTK_LIFT_R; i++)
-		initMotor(i);
+	for (int i = MotorInfo::INTK_DRV; i <= MotorInfo::INTK_LIFT_R; i++)
+		initMotor(static_cast<MotorInfo::MotorType>(i));
 
 	intakeReady = true;
 }
 
+// starts up CAN interface and returns error code
 int32_t Robot::initCANInterface(void)
 {
-	if (int32_t error = ctre::phoenix::platform::can::SetCANInterface("can0"))
+	int32_t error;
+	// returns 0 if successfully initialized
+	if (error = ctre::phoenix::platform::can::SetCANInterface("can0"))
 		std::cout << "CAN Initialization returned error code: " << error << "\n";
 
 	return error;

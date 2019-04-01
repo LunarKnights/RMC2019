@@ -6,13 +6,12 @@
 #include <lk_rmc_hardware/Motor.h>
 
 #include "ctre/phoenix/platform/Platform.h"
-// #include "ctre/Phoenix.h"
 
-// Robot class which contains all of the hardware devices connected
-// to the robot (motors, sensors, etc.)
+#include <vector>
+
 class Robot
 {
-private:
+  private:
 	std::vector<Motor *> motors;
 	// IMU imu;
 	// Battery battery;
@@ -22,12 +21,12 @@ private:
 	bool intakeReady;
 	bool motorReady[8];
 
-public:
+  public:
 	Robot(void);
 	~Robot(void);
 	int getNumMotors(void);
-	Motor *getMotor(MotorType id);
-	bool initMotor(MotorType id);
+	Motor &getMotor(MotorInfo::MotorType id);
+	bool initMotor(MotorInfo::MotorType id);
 	void stopAllMotors(void);
 	void initBase(void);
 	void initDepo(void);
@@ -36,3 +35,5 @@ public:
 	// IMU getIMU(void);
 	// Battery getBattery(void);
 };
+
+#endif

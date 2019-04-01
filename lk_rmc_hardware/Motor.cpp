@@ -1,4 +1,5 @@
 #include <lk_rmc_hardware/Motor.h>
+// #include "include/Motor.h"
 
 #include "ctre/phoenix/motorcontrol/can/TalonSRX.h"
 // #include "ctre/Phoenix.h"
@@ -72,7 +73,7 @@ MotorInfo::~MotorInfo(void)
 {
 }
 
-MotorType MotorInfo::getType(void)
+MotorInfo::MotorType MotorInfo::getType(void)
 {
 	return this->id;
 }
@@ -87,10 +88,7 @@ std::string MotorInfo::typeToString(void)
 	return this->name;
 }
 
-// TODO: everything for constructor and destructor
-
-Motor::Motor(MotorInfo info)
-	: motorcontrol::can::TalonSRX(info.getCanId)
+Motor::Motor(MotorInfo info) : info(info), motorcontrol::can::TalonSRX((int)info.getCanId())
 {
 	this->info = info;
 }
@@ -99,7 +97,7 @@ Motor::~Motor(void)
 {
 }
 
-Motor::getInfo(void)
+MotorInfo Motor::getInfo(void)
 {
 	return this->info;
 }
