@@ -65,11 +65,11 @@
     </collision>
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="5"/>
+      <mass value="2.637"/>
       <inertia
-        ixx="1.0" ixy="0.0" ixz="0.0"
-        iyy="1.0" iyz="0.0"
-        izz="1.0"/>
+        ixx=".02467" ixy="0.0" ixz="0.0"
+        iyy=".04411" iyz="0.0"
+        izz=".02467"/>
     </inertial>
   </link>
   <joint
@@ -110,11 +110,11 @@
     </collision>
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="5"/>
+      <mass value="2.637"/>
       <inertia
-        ixx="1.0" ixy="0.0" ixz="0.0"
-        iyy="1.0" iyz="0.0"
-        izz="1.0"/>
+        ixx=".02467" ixy="0.0" ixz="0.0"
+        iyy=".04411" iyz="0.0"
+        izz=".02467"/>
     </inertial>
   </link>
   <joint
@@ -155,11 +155,11 @@
     </collision>
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="5"/>
+      <mass value="2.637"/>
       <inertia
-        ixx="1.0" ixy="0.0" ixz="0.0"
-        iyy="1.0" iyz="0.0"
-        izz="1.0"/>
+        ixx=".02467" ixy="0.0" ixz="0.0"
+        iyy=".04411" iyz="0.0"
+        izz=".02467"/>
     </inertial>
   </link>
   <joint
@@ -213,11 +213,11 @@
     </collision>
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="5"/>
+      <mass value="2.637"/>
       <inertia
-        ixx="1.0" ixy="0.0" ixz="0.0"
-        iyy="1.0" iyz="0.0"
-        izz="1.0"/>
+        ixx=".02467" ixy="0.0" ixz="0.0"
+        iyy=".04411" iyz="0.0"
+        izz=".02467"/>
     </inertial>
   </link>
   <link name="imu_link"/>
@@ -290,34 +290,34 @@
     </joint>
   </transmission>
   <!-- <gazebo reference="backRightWheel">
-    <mu1>0.1</mu1>
-    <mu2>0.1</mu2>
-    <kp>500000</kp>
-    <kd>10.0</kd>
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
     <minDepth>0.001</minDepth>
     <fdir1>1 0 0 </fdir1>
   </gazebo>
   <gazebo reference="backLeftWheel">
-    <mu1>0.1</mu1>
-    <mu2>0.1</mu2>
-    <kp>500000</kp>
-    <kd>10.0</kd>
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
     <minDepth>0.001</minDepth>
     <fdir1>1 0 0 </fdir1>
   </gazebo>
   <gazebo reference="frontRightWheel">
-    <mu1>0.1</mu1>
-    <mu2>0.1</mu2>
-    <kp>500000</kp>
-    <kd>10.0</kd>
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
     <minDepth>0.001</minDepth>
     <fdir1>1 0 0 </fdir1>
   </gazebo>
   <gazebo reference="frontLeftWheel">
-    <mu1>0.1</mu1>
-    <mu2>0.1</mu2>
-    <kp>500000</kp>
-    <kd>10.0</kd>
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+    <kp>10000000.0</kp>
+    <kd>1.0</kd>
     <minDepth>0.001</minDepth>
     <fdir1>1 0 0 </fdir1>
   </gazebo> -->
