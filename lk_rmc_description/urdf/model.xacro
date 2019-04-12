@@ -76,7 +76,7 @@
     name="frontLeftWheelRotate"
     type="continuous">
     <origin
-      xyz="0.30464 0.23782 -0.28624"
+      xyz="0.30464 0.28782 -0.28624"
       rpy="-1.5708 0.0022295 0" />
     <parent
       link="base_link" />
@@ -121,7 +121,7 @@
     name="backLeftWheelRotate"
     type="continuous">
     <origin
-      xyz="-0.30496 0.23782 -0.28624"
+      xyz="-0.30496 0.28782 -0.28624"
       rpy="-1.5708 -0.71925 0" />
     <parent
       link="base_link" />
@@ -166,7 +166,7 @@
     name="frontRightWheelRotate"
     type="continuous">
     <origin
-      xyz="0.30464 -0.2416 -0.28624"
+      xyz="0.30464 -0.2916 -0.28624"
       rpy="-1.5708 -0.055957 3.4299E-18" />
     <parent
       link="base_link" />
@@ -179,7 +179,7 @@
     name="backRightWheelRotate"
     type="continuous">
     <origin
-      xyz="-0.30496 -0.2416 -0.28624"
+      xyz="-0.30496 -0.2916 -0.28624"
       rpy="-1.5708 0 0" />
     <parent
       link="base_link" />
