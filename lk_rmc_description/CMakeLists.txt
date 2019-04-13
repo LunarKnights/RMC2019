@@ -8,6 +8,7 @@ project(lk_rmc_description)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+<<<<<<< HEAD
   roscpp
   std_msgs
   sensor_msgs
@@ -15,6 +16,10 @@ find_package(catkin REQUIRED COMPONENTS
   nav_msgs
   tf
   gazebo_ros
+=======
+  urdf
+  xacro
+>>>>>>> 0c75cd2446eebd33e7faff7cf2fec07d139bbcd9
 )
 
 ## System dependencies are found with CMake's conventions

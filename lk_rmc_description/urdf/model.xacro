@@ -8,6 +8,32 @@
   </joint>
   <link
     name="base_link">
+
+  <!-- <link name="world"/> -->
+
+  <!-- <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint> -->
+
+<!-- Main link that everything is based off of. base_link is default 
+name that ros uses. Most properties generated through solidworks to URDF exporter-->
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0063713 -0.11708 0.0018811"
+        rpy="0 0 0" />
+      <mass
+        value="12.883" />
+      <inertia
+        ixx="0.27816"
+        ixy="-0.020687"
+        ixz="1.9963E-05"
+        iyy="0.59209"
+        iyz="3.0096E-05"
+        izz="0.60601" />
+    </inertial>
     <visual>
       <origin
         xyz="0 0 0"
