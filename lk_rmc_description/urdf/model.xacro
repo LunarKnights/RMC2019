@@ -6,15 +6,6 @@
     <child link="base_link"/>
     <origin xyz="0.0 0.0 0.4" rpy="0 0 0 "/>
   </joint>
-  <link
-    name="base_link">
-
-  <!-- <link name="world"/> -->
-
-  <!-- <joint name="fixed" type="fixed">
-    <parent link="world"/>
-    <child link="base_link"/>
-  </joint> -->
 
 <!-- Main link that everything is based off of. base_link is default 
 name that ros uses. Most properties generated through solidworks to URDF exporter-->
