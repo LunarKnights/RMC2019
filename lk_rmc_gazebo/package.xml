@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>lk_rmc_description</name>
+  <name>lk_rmc_gazebo</name>
   <version>0.0.0</version>
-  <description>The lk_rmc_description package</description>
+  <description>The lk_rmc_gazebo package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->

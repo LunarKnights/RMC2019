@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(lk_rmc_description)
+project(lk_rmc_gazebo)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -15,6 +15,8 @@ find_package(catkin REQUIRED COMPONENTS
   nav_msgs
   tf
   gazebo_ros
+  urdf
+  xacro
 )
 
 ## System dependencies are found with CMake's conventions
