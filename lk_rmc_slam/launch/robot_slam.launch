@@ -1,0 +1,23 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="slam_methods" default="gmapping" doc="slam type [gmapping, cartographer, hector, karto, frontier_exploration]"/>
+  <arg name="configuration_basename" default="robot_lds_2d.lua"/>
+  <arg name="open_rviz" default="true"/>
+
+  <!-- <include file="$(find lk_rmc_bringup)/launch/robot_remote.launch">
+    <arg name="model" value="$(arg model)" />
+  </include> -->
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization"> 
+    <rosparam command="load" file="$(find lk_rmc_slam)/config/robot_localization.yaml" />
+  </node>
+  <!-- SLAM: Gmapping, Cartographer, Hector, Karto, Frontier_exploration, RTAB-Map -->
+  <include file="$(find lk_rmc_slam)/launch/robot_$(arg slam_methods).launch">
+    <arg name="configuration_basename" value="$(arg configuration_basename)"/>
+  </include>
+
+  <!-- rviz -->
+  <group if="$(arg open_rviz)"> 
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find lk_rmc_slam)/rviz/robot_$(arg slam_methods).rviz"/>
+  </group>
+</launch>
