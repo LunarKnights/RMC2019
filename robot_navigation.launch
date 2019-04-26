@@ -1,0 +1,27 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="map_file" default="$(find lk_rmc_navigation)/maps/map.yaml"/>
+  <arg name="open_rviz" default="true"/>
+
+  <!-- lk_rmc -->
+  <!--<include file="$(find lk_rmc_bringup)/launch/lk_rmc_remote.launch"/>-->
+
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization">
+    <rosparam command="load" file="$(find lk_rmc_slam)/config/robot_localization.yaml" />
+  </node>
+  
+  <!-- Map server -->
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+
+  <!-- AMCL -->
+  <include file="$(find lk_rmc_navigation)/launch/amcl.launch"/>
+
+  <!-- move_base -->
+  <include file="$(find lk_rmc_navigation)/launch/move_base.launch"/>
+
+  <!-- rviz -->
+  <group if="$(arg open_rviz)">
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find lk_rmc_navigation)/rviz/lk_rmc_navigation.rviz"/>
+  </group>
+</launch>
