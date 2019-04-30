@@ -13,31 +13,31 @@ MotorInfo::MotorInfo(MotorType id)
 	switch (id)
 	{
 	case BASE_FL:
-		canId = 0;
+		canId = 4;
 		hasEncoder = true;
 		name = "BASE_FL";
 		break;
 
 	case BASE_FR:
-		canId = 1;
+		canId = 2;
 		hasEncoder = true;
 		name = "BASE_FR";
 		break;
 
 	case BASE_BL:
-		canId = 2;
+		canId = 3;
 		hasEncoder = true;
 		name = "BASE_BL";
 		break;
 
 	case BASE_BR:
-		canId = 3;
+		canId = 1;
 		hasEncoder = true;
 		name = "BASE_BR";
 		break;
 
 	case DEPO:
-		canId = 4;
+		canId = 0;
 		hasEncoder = true;
 		name = "DEPO";
 		break;
@@ -88,7 +88,7 @@ std::string MotorInfo::typeToString(void)
 	return this->name;
 }
 
-Motor::Motor(MotorInfo info) : info(info), motorcontrol::can::TalonSRX((int)info.getCanId())
+Motor::Motor(MotorInfo info) : info(info), motorcontrol::can::TalonSRX(info.getCanId())
 {
 	this->info = info;
 }
