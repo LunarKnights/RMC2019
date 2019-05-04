@@ -25,7 +25,7 @@ MotorInfo::MotorInfo(MotorType id)
 		break;
 
 	case BASE_BL:
-		canId = 3;
+		canId = 3;  
 		hasEncoder = true;
 		name = "BASE_BL";
 		break;

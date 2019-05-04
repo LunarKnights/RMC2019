@@ -2,6 +2,7 @@
 
 #include "ctre/Phoenix.h"
 #include "ctre/phoenix/platform/Platform.h"
+#include "ctre/phoenix/unmanaged/Unmanaged.h"
 #include "ctre/phoenix/motorcontrol/ControlMode.h"
 #include "ctre/phoenix/motorcontrol/can/TalonSRX.h"
 
@@ -39,13 +40,18 @@ void drive(double fwd, double turn)
 	frontRight.Set(ControlMode::PercentOutput, right);
 }
 
+void sleepApp(int ms)
+{
+	std::this_thread::sleep_for(std::chrono::milliseconds(ms));
+}
+
 int main(void)
 {
 	int fwd = 0, turn = 0;
-	char *canPort = "can0";
+	std::string canPort = "can0";
 	int32_t error;
 
-	if (error = ctre::phoenix::platform::can::SetCANInterface(canPort))
+	if (error = ctre::phoenix::platform::can::SetCANInterface(canPort.c_str()))
 	{
 		std::cout << "CAN Initialization returned error code: " << error << "\n";
 		return 0;
@@ -57,11 +63,20 @@ int main(void)
 
 	while (true)
 	{
-		scanf("%d %d\n", &fwd, &turn);
-		if (fwd == 5 && turn == 5)
-			break;
+		// scanf("%d %d\n", &fwd, &turn);
 
-		drive(fwd, turn);
+		// if (fwd == 5 && turn == 5)
+		// 	break;
+
+		// drive(fwd, turn);
+
+		drive(0, 0);
+
+		ctre::phoenix::unmanaged::Unmanaged::FeedEnable(100);
+
+		sleepApp(20);
+
+		break;
 	}
 
 	drive(0, 0);
